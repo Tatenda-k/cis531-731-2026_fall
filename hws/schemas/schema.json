@@ -1,0 +1,24 @@
+{
+ 
+ "title": "WWIPoetryChunkRecord",
+ "type": "object",
+ "properties": {
+ "chunk_id": {"type": "string", "description": "<track_id>_chunk<index>"},
+ "doc_id": {"type": "string", "description": "Parent track identifier"},
+ "source_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+ "license_class": {"type": "string", "const": "public_domain"},
+ "corpus_type": {"type": "string", "const": "text"},
+ "broadcast_ts": {"type": "string", "format": "date-time", "description": "= ingestion extracted_date, not a true broadcast time"},
+ "trope_ids": {"type": "array", "items": {"type": "string"}, "description": "Empty pre-labeling; populated at MP 9"},
+ "embedding_model": {"type": "string", "const": "jinaai/jina-embeddings-v2-base-en"},
+ "embedding_dim": {"type": "integer", "const": 768},
+ "vector": {"type": "array", "items": {"type": "number"}, "minItems": 768, "maxItems": 768},
+ "created_ts": {"type": "string", "format": "date-time"},
+ "faiss_id": {"type": "integer", "description": "int64, SHA-256(chunk_id) truncated to 8 bytes"},
+ "chunk_index": {"type": "integer"},
+ "char_start": {"type": "integer"},
+ "char_end": {"type": "integer"}
+ },
+ "required": ["chunk_id", "doc_id", "source_hash", "license_class", "corpus_type",
+ "embedding_model", "embedding_dim", "vector", "created_ts", "faiss_id"]
+}
