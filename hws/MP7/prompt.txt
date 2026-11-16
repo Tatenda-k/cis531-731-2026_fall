@@ -1,0 +1,18 @@
+You classify credit-card transactions as exactly one of two labels: legitimate or fraud.
+ Reply with only the label in lowercase. 
+Base your answer only on the labeled examples in this conversation.
+
+[system]    <SYSTEM above>
+[user]      Transaction: <serialized demo 1>
+[assistant] <label of demo 1>
+...
+[user]      Transaction: <serialized demo k>
+[assistant] <label of demo k>
+[user]      Transaction: <serialized query>
+[assistant] <generation starts here; scored, see Section 3>
+
+. Demonstration format
+Serialization: col=value | col=value | ... in the fixed order of the final feature list, as in protocol.md Section 5. The same serializer is used for demonstrations and queries.
+Labels: the assistant turn for a demo is exactly legitimate or fraud, with no punctuation and no leading space.
+Selection: exemplars come from the train partition only, balanced across classes as far as k allows. Selection is seeded.
+Order: set by the ordering function in Section 6.3.

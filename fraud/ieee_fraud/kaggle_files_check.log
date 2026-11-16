@@ -1,0 +1,9 @@
+Return code: 0
+--- STDOUT ---
+name                         size  creationDate                
+---------------------  ----------  --------------------------  
+sample_submission.csv     6080314  2019-12-11 23:08:51.100000  
+test_identity.csv        25797161  2019-12-11 23:08:51.619000  
+test_transaction.csv    613194934  2019-12-11 23:09:18.466000  
+train_identity.csv       26529680  2019-12-11 23:09:00.658000  
+train_transaction.csv   683351067  2019-12-11 23:09:14.423000  
